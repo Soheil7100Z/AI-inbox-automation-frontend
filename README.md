@@ -40,21 +40,6 @@ Structured Result
 React UI
 ```
 
-## Project Structure
-
-```text
-src/
-├── components/
-│   ├── MessageInput.tsx
-│   ├── AnalysisResult.tsx
-│   ├── AutomationResult.tsx
-│   └── ResponsePreview.tsx
-├── types/
-│   └── analysis.ts
-├── App.tsx
-└── main.tsx
-```
-
 ## Getting Started
 
 ### Installation
