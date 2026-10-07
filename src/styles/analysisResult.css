@@ -1,0 +1,54 @@
+.analysis-result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.analysis-result-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #6d214f;
+}
+
+.analysis-result-subtitle {
+  margin-top: 0.3125rem;
+  font-size: 0.85rem;
+  color: #777b85;
+}
+
+.analysis-result-confidence {
+  padding: 0.375rem 0.625rem;
+  border-radius: 1.25rem;
+  background: #f0f1f3;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6d214f;
+  white-space: nowrap;
+}
+
+.analysis-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.analysis-result-item {
+  padding: 1rem;
+  border-radius: 0.625rem;
+  background: #f7f8f9;
+}
+
+.analysis-result-label {
+  display: block;
+  margin-bottom: 0.4375rem;
+  font-size: 0.75rem;
+  color: #777b85;
+}
+
+.analysis-result-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000;
+}
