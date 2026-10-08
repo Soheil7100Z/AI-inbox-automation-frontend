@@ -4,6 +4,8 @@ import { useState } from 'react';
 import type { ProcessedMessage } from './types/messageType';
 
 import AnalysisResult from './components/AnalysisResult';
+import AutomationResult from './components/AutomationResult';
+import ResponsePreview from './components/ResponsePreview';
 
 const App = () => {
   const [message, setMessage] = useState('');
@@ -57,6 +59,7 @@ const App = () => {
         <section>
           <div className="message-input-header">
             <h2 className="message-input-title">Eingehende Nachricht</h2>
+            
             <p className="message-input-description">
               Fügen Sie eine eingehende E-Mail oder Kundennachricht ein, um sie mit KI zu analysieren.
             </p>
@@ -78,6 +81,10 @@ const App = () => {
 
         <div className="inbox-results">
           <AnalysisResult aiAnswer={aiAnswer} />
+
+          <AutomationResult recommendedAction={aiAnswer.recommendedAction}/>
+
+          <ResponsePreview response={aiAnswer.response}/>
         </div>
       </div>
     </main>

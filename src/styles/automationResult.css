@@ -1,0 +1,62 @@
+.automation-result-header {
+  margin-bottom: 1.25rem;
+}
+
+.automation-result-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #6d214f;
+}
+
+.automation-result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.automation-result-status {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem;
+  border-radius: 0.625rem;
+  background: #f7f8f9;
+}
+
+.automation-result-status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: #6d214f;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.automation-result-status-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.automation-result-action {
+  padding: 1rem;
+  border: 0.0625rem solid #e1e3e8;
+  border-radius: 0.625rem;
+}
+
+.automation-result-label {
+  display: block;
+  margin-bottom: 0.4375rem;
+  font-size: 1rem;
+  color: #777b85;
+}
+
+.automation-result-value {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #000;
+}

@@ -1,0 +1,40 @@
+.response-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.response-preview-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #6d214f;
+}
+
+.response-preview-copy-button {
+  padding: 0.4375rem 0.75rem;
+  border: 0.0625rem solid #6d214f;
+  border-radius: 0.4375rem;
+  background: #ffffff;
+  color: #6d214f;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.response-preview-copy-button:hover {
+  background: #6d214f;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.response-preview-content {
+  min-height: 9.375rem;
+  padding: 1.125rem;
+  border-radius: 0.625rem;
+  background: #f7f8f9;
+  color: #000;
+  font-size: 1rem;
+  line-height: 1.65;
+}
