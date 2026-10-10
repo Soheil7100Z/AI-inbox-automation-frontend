@@ -119,8 +119,14 @@ body {
 
 .message-input-footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 1rem;
+}
+
+.message-input-footer span {
+  color: #b81c77;
+  margin-left: 1rem;
+  font-weight: 700;
 }
 
 .message-input-button {

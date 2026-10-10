@@ -1,8 +1,8 @@
 import '../styles/automationResult.css';
 
-type AutomationResultProps = { recommendedAction: string };
+type AutomationResultProps = { recommendedAction: string; isResultExist: boolean };
 
-const AutomationResult = ({ recommendedAction }: AutomationResultProps) => {
+const AutomationResult = ({ recommendedAction, isResultExist }: AutomationResultProps) => {
   return (
     <section>
       <div className="automation-result-header">
@@ -11,8 +11,10 @@ const AutomationResult = ({ recommendedAction }: AutomationResultProps) => {
 
       <div className="automation-result-content">
         <div className="automation-result-status">
-          <span className="automation-result-status-icon"> ✓ </span>
-          <span className="automation-result-status-text"> Aktion erfolgreich ermittelt</span>
+          <span className={`automation-result-status-icon ${isResultExist ? 'active' : ''}`}> ✓ </span>
+          <span className={`automation-result-status-text ${isResultExist ? 'active' : ''}`}>
+            Aktion erfolgreich ermittelt
+          </span>
         </div>
 
         <div className="automation-result-action">

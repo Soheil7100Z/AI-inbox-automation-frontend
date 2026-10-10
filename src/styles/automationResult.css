@@ -30,16 +30,27 @@
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
-  background: #6d214f;
+  background: #aeafb1;
   color: #ffffff;
   font-size: 0.8rem;
   font-weight: 700;
 }
 
+.automation-result-status-icon.active {
+  background: #6d214f;
+  transition: all 0.3s ease;
+}
+
 .automation-result-status-text {
+  opacity: 0;
   font-size: 0.9rem;
   font-weight: 600;
   color: #000;
+}
+
+.automation-result-status-text.active {
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 
 .automation-result-action {

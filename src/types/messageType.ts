@@ -1,10 +1,6 @@
-export type MessageCategory = 'delivery' | 'billing' | 'technical' | 'general' | '-';
-
-export type MessagePriority = 'low' | 'medium' | 'high' | '-';
-
 export interface ProcessedMessage {
-  category: MessageCategory;
-  priority: MessagePriority;
+  category: string;
+  priority: string;
   intent: string;
   confidence: number;
   extractedData: {

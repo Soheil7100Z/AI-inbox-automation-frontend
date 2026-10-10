@@ -22,8 +22,17 @@ const App = () => {
     response: 'Keine',
   });
 
+  const [error, setError] = useState<string>('');
+  const [isResultExist, setIsResultExist] = useState(false);
+
   const handleSubmit = async () => {
-    if (!message.trim()) return;
+    setError('');
+    setIsResultExist(false);
+
+    if (!message.trim()) {
+      setError('Fügen Sie eine eingehende E-Mail oder Kundennachricht ein!');
+      return;
+    }
 
     try {
       const res = await fetch('/api/process-message', {
@@ -31,12 +40,20 @@ const App = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message }),
       });
-      if (!res.ok) throw new Error('Fehler bei der Anfrage');
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Fehler bei der Anfrage');
+      }
 
       const data = await res.json();
       setAiAnswer(data);
+      setIsResultExist(true);
     } catch (error) {
-      console.error('Fehler beim Senden der Nachricht:', error);
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError('Ein unerwarteter Fehler ist aufgetreten.');
+      }
     }
   };
 
@@ -59,7 +76,7 @@ const App = () => {
         <section>
           <div className="message-input-header">
             <h2 className="message-input-title">Eingehende Nachricht</h2>
-            
+
             <p className="message-input-description">
               Fügen Sie eine eingehende E-Mail oder Kundennachricht ein, um sie mit KI zu analysieren.
             </p>
@@ -67,7 +84,7 @@ const App = () => {
 
           <textarea
             className="message-input-textarea"
-            placeholder="Eingehende Nachricht hier einfügen..."
+            placeholder="Guten Tag, meine Bestellung #48392 ist seit zwei Wochen unterwegs, aber noch nicht angekommen. Können Sie bitte den Lieferstatus prüfen?"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
@@ -76,15 +93,17 @@ const App = () => {
             <button className="message-input-button" onClick={handleSubmit}>
               Nachricht analysieren
             </button>
+
+            {error && <span>{error}</span>}
           </div>
         </section>
 
         <div className="inbox-results">
           <AnalysisResult aiAnswer={aiAnswer} />
 
-          <AutomationResult recommendedAction={aiAnswer.recommendedAction}/>
+          <AutomationResult recommendedAction={aiAnswer.recommendedAction} isResultExist={isResultExist} />
 
-          <ResponsePreview response={aiAnswer.response}/>
+          <ResponsePreview response={aiAnswer.response} />
         </div>
       </div>
     </main>
